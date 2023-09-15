@@ -28,5 +28,15 @@ async def halo(ctx):
 async def tips(ctx):
     random_tip = random.choice(tips_mengurangi_polusi)
     await ctx.send(f"Salah satu tips mengurangi polusi : {random_tip}")
+
+@bot.command()
+async def meme(ctx):
+    daftar_gambar = os.listdir('image')
+    gambar = random.choice(daftar_gambar)
+    with open(f'image/{gambar}', 'rb') as f:
+        # Mari simpan file perpustakaan/library Discord yang dikonversi dalam variabel ini!
+        picture = discord.File(f)
+    # Kita kemudian dapat mengirim file ini sebagai tolok ukur!
+    await ctx.send(file=picture)
     
 bot.run('Masukan token bot kamu disini')

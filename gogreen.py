@@ -27,11 +27,11 @@ async def halo(ctx):
 @bot.command()
 async def tips(ctx):
     random_tip = random.choice(tips_mengurangi_polusi)
-    await ctx.send(f"Salah satu tips mengurangi polusi : {random_tip}")
+    await ctx.send(f"Salah satu tips mengurangi polusi : {random_tip}") #Fungsi untuk menampilkan tips
 
 @bot.command()
 async def meme(ctx):
-    daftar_gambar = os.listdir('image')
+    daftar_gambar = os.listdir('image') #Simpan meme kamu dalam folder image
     gambar = random.choice(daftar_gambar)
     with open(f'image/{gambar}', 'rb') as f:
         # Mari simpan file perpustakaan/library Discord yang dikonversi dalam variabel ini!
